@@ -30,7 +30,7 @@ class TodoController extends Controller
     
         $todo->save();
 
-    return redirect()->route('todo.index');
+        return redirect()->route('todo.index');
     }
 
 
