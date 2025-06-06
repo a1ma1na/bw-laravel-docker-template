@@ -13,3 +13,5 @@ class Todo extends Model
     ];    
 
 }
+
+//Modelを介することでSQL文を組み立てることなくtodosテーブルを操作することができる

@@ -11,9 +11,11 @@ class TodoController extends Controller
     public function index()
     {
         $todo = new Todo();
-        $todos = $todo->all();
+        //dd($todo);
+        $test = $todo->all();
 
-        return view('todo.index', ['todos' => $todos]);
+        return view('todo.index', ['todos' => $test]);
+        //todonotestに入力しなおして、正しく動かす
     }
 
     public function create()
@@ -31,7 +33,17 @@ class TodoController extends Controller
         $todo->save();
 
         return redirect()->route('todo.index');
+        //return redirect()->route('test.index');
     }
+
+    public function show($id)
+    {
+        $model = new Todo();
+        $todo = $model->find($id);
+        //dd($todo);
+
+        return view('todo.show', ['todo' => $todo]);
+    }       
 
 
 
