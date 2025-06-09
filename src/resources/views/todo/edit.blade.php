@@ -10,11 +10,16 @@
         @method('PUT')
         <input type="hidden" name="_method" value="PUT">
         <div class="form-group row">
-         <label for="name" class="col-md-4 col-form-label text-md-right">ToDo入力</label>
-        <div class="col-md-6">
-         <input type="text" class="form-control" name="content" value="{{ $todo->content }}">
+            <label for="name" class="col-md-4 col-form-label text-md-right">ToDo入力</label>
+            <div class="col-md-6">
+                <!-- ここから -->
+                <input type="text" class="form-control @if($errors->has('content')) border-danger @endif" name="content" value="{{ $todo->content }}">
+                @if($errors->has('content'))
+                    <span class="text-danger">{{ $errors->first('content') }}</span>
+                 @endif
+                <!-- ここまで -->
+            </div>
         </div>
-    </div>
     <div class="form-group row mb-0">
         <div class="col-md-6 offset-md-4">
             <button type="submit" class="btn btn-primary">更新</button>

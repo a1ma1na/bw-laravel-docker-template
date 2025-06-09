@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\TodoRequest;
 use App\Todo;
 
 class TodoController extends Controller
@@ -32,19 +32,14 @@ class TodoController extends Controller
         return view('todo.create');
     }
 
-     public function store(Request $request)
+     public function store(TodoRequest $request) // 修正
     {
         $inputs = $request->all();
-
-        // $todo = new Todo();
-        // $todo->fill($inputs);
-        // $todo->save();
         $this->todo->fill($inputs);
         $this->todo->save();
-
         return redirect()->route('todo.index');
-        //return redirect()->route('test.index');
     }
+
     
     public function show($id)
     {
