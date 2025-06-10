@@ -32,7 +32,7 @@ class TodoController extends Controller
         return view('todo.create');
     }
 
-     public function store(TodoRequest $request) // 修正
+     public function store(TodoRequest $request)
     {
         $inputs = $request->all();
         $this->todo->fill($inputs);

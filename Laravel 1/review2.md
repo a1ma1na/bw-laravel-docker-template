@@ -52,7 +52,7 @@ TodoControllerクラスのインスタンス（オブジェクト）が生成さ
 
 ### ORMとは何か、またLaravelが使用しているORMは何か
 ORM...オブジェクト指向プログラミング言語とリレーショナルデータベース間の橋渡しを担う技術。
-Laravelが使用しているORM...Eloquentが標準で採用している。
+Laravelが使用しているORM...Eloquent(エロクアント)を標準で採用している。
 
 ### composer.json, composer.lockとは何か
 composer.json...PHPプロジェクトの依存関係を管理するComposerの設定ファイル。 このファイルにはプロジェクトの名前、説明、必要なパッケージとそのバージョン、オートロードの設定などが記述される。
